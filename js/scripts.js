@@ -1,6 +1,7 @@
 var outputArray = [];
 
 $(function(){
+  // $('#about, #rules, #return').height($(window).height());
   $("#pingForm").submit(function(){
     event.preventDefault();
     outputArray = [];

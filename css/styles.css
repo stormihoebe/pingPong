@@ -1,0 +1,43 @@
+html, body {
+  height: 100%;
+}
+.jumbotron {
+  background-color: #282F44;
+  color: #ECECEC;
+  text-align: center;
+}
+#about {
+  background-color:#E6AF2E;
+  height: 100%;
+  overflow-y:auto;
+  min-height: 1000px;
+}
+#rules {
+  background-color:#ECECEC;
+    min-height: 1000px;
+}
+#return {
+  background-color: #F5D061;
+  min-height: 1000px;
+}
+
+h3, h2 {
+  margin-top: 20px;
+  margin-bottom: 35px;
+  text-align: center;
+}
+ol {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+ul{
+  font-size: 20px;
+}
+.btn-warning {
+  display: block;
+  margin: auto;
+  width: 100px;
+}
+.differentGame {
+  margin-top: 50px;
+}

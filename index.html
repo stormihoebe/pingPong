@@ -11,9 +11,9 @@
   <div class="jumbotron">
     <h1>Ping-Pong</h1>
   </div>
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
-      <div class="col-md-3">
+      <div id="about" class="col-sm-3">
         <h3>About Ping-Pong</h3>
         <p>
           Ping-Pong is a counting game that returns numbers and "ping" or "pong" responses. Enter a number to begin playing.
@@ -25,7 +25,7 @@
         <h4>See my other projects at:</h4>
         <a href="https://github.com/stormihoebe">www.github.com/stormihoebe</a>
       </div>
-      <div class="col-md-5">
+      <div id="rules" class="col-sm-6">
         <h3>Rules of Ping-Pongs</h3>
         <p>
           Ping-pong will count from 1 to any number you choose with the following exceptions:
@@ -42,13 +42,41 @@
             <label for="sentence">Enter a number:</label>
             <input type="number" id="inputNumber" name="pingnumber" value=""class="form-control">
           </div>
-          <button type="submit" name="button" class="btn btn-success">Lets Play!</button>
+          <button type="submit" name="button" class="btn btn-warning">Lets Play!</button>
         </form>
-      </div>
+
+        <div class="differentGame">
+          <h2>Now Let's Play A Different Game</h2>
+          <h3>New Rules:</h3>
+          <ol>
+            <li>You decide which number we count to.</li>
+            <li>You decide what numbers will be relaced with a word.</li>
+            <li>You decide what word replaces those digits</li>
+          </ol>
+          <form id="differentGameForm">
+            <div class="form-group">
+              <label for="sentence">Enter a number to count to:</label>
+              <input type="number" id="newCountTo" name="newCountnumberTo" value=""class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="sentence">Numbers evenly divisible by this number will be replaced:</label>
+              <input type="number" id="newCountBy" name="newCountnumberBy" value=""class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="sentence">Enter a word or phrase to replace numbers:</label>
+              <input type="number" id="newWord" name="newWord" value=""class="form-control">
+            </div>
+            <button type="submit" name="button" class="btn btn-warning">Lets Play!</button>
+          </form>
+
+        </div>
+      </div><!--end rules and new game column-->
 
 
-      <div class="col-md-4">
-        <h3>Ping-Pong Return</h3>
+
+
+      <div id="return" class="col-sm-3">
+        <h3>Counting Return</h3>
         <ul class="outputList">
 
         </ul>
