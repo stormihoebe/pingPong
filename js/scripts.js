@@ -1,8 +1,5 @@
 var outputArray = [];
 
-
-
-
 $(function(){
   $("#pingForm").submit(function(){
     event.preventDefault();
@@ -18,10 +15,7 @@ $(function(){
         outputArray.push("ping");
       } else {
         outputArray.push(index);
-    };
-    // for (index = 3; index <= inputNumber; index +=3){
-    //   outputArray.push(index);
-    //   console.log(outputArray);
+      };
     };
     outputArray.forEach(function(output){
       $(".outputList").append("<li>" + output + "</li>");
