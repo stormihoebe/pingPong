@@ -11,5 +11,10 @@ $(function(){
       outputArray.push(index);
     };
     console.log(outputArray);
+
+    outputArray.forEach(function(output){
+      $(".outputList").append("<li>" + output + "</li>")
+
+    });
   });//submit
 });//jQuery
