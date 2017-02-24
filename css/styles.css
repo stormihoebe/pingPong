@@ -44,3 +44,10 @@ ul{
   background-color: #282F44;
   color: white;
 }
+.special-button {
+  display: inline-block;
+  width: 200px;
+}
+.thirdOutput {
+  max-width: 400px;
+}

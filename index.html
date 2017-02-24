@@ -68,9 +68,50 @@
             </div>
             <button type="submit" name="button" class="btn btn-warning">Lets Play!</button>
           </form>
-
         </div><!--end different/new game-->
-      </div><!--end rules and new game column-->
+        <div class="thirdGame">
+          <h2>I Have One More Game to Play</h2>
+          <h3>See if You Can Guess the Pattern</h3>
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-2">
+                <h4>This is how I count:</h4>
+                <ul class="quizList">
+                </ul>
+              </div><!--column-->
+              <div class="col-sm-10">
+                <h4>What is my pattern?</h4>
+                <form id="thirdForm">
+                  <div class="form-group">
+                    <p>Check all that apply:</p>
+                    <input type="checkbox" name="counting-way" value="normal"> I count perfectly normal<br>
+                    <input type="checkbox" name="counting-way" value="random">I say animal names completely randomly<br>
+                    <input type="checkbox" name="counting-way" value="everyOtherTwo">I say a random animal name ever other two<br>
+                    <input type="checkbox" name="counting-way" value="everyOtherOdd">I say Dog ever other odd number<br>
+                    <input type="checkbox" name="counting-way" value="twosAndThrees">I say Cat when a number is divisible by two and three<br>
+                    <input type="checkbox" name="counting-way" value="mammal">I say a mammal every number that is divisible by five or four<br>
+                    <input type="checkbox" name="counting-way" value="seven">I say Turtle when a number is divisible by seven<br>
+                    <input type="checkbox" name="counting-way" value="ten">I say Dog only when a number is divisible by ten<br>
+                    <input type="checkbox" name="counting-way" value="five">I say Dog when I used to say "pong" in the ping-pong game<br>
+                  </div>
+                  <button type="submit" name="button" class="btn btn-warning special-button">Check My Answer!</button>
+                </form>
+                <div class="thirdOutput">
+                  <h4>Results:</h4>
+                  <p>
+                    <span class="thirdGameOutput"></span>
+                  </p>
+
+                </div>
+
+              </div><!--column-->
+
+            </div><!--row-->
+          </div><!--contianer-->
+
+
+        </div>
+      </div><!--end rules and new games column-->
 
 
 
