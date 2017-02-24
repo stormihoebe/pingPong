@@ -1,10 +1,9 @@
 var outputArray = [];
-
 var thirdGameInputArray = [];
 var correctThirdGameArray = ["twosAndThrees", "seven", "five"];
 
 $(function(){
-  //ping pong game start
+  //START FIRST GAME ------------------------------------------------------
   $("#pingForm").submit(function(){
     event.preventDefault();
     outputArray = [];
@@ -25,8 +24,9 @@ $(function(){
       $(".outputList").append("<li>" + output + "</li>");
     });//output array apprend
   });//end submit
+//END FIRST GAME
 
-  //new game start
+//START SECOND GAME  ------------------------------------------------------
   $("#differentGameForm").submit(function(){
     event.preventDefault();
     outputArray = [];
@@ -41,13 +41,14 @@ $(function(){
         outputArray.push(index);
       };
     };
-    console.log(outputArray)
     outputArray.forEach(function(output){
       $(".outputList").append("<li>" + output + "</li>");
     });//output array apprend
   });//end submit second game
+//END SECOND GAME
 
-  //start third game
+//START THIRD GAME  ------------------------------------------------------
+  //Start Business Logic for Third Game
   var thirdGameArray = []
   for (index = 1; index <= 20; index++) {
     if ((index%2===0) && (index%3===0)){
@@ -61,23 +62,18 @@ $(function(){
     };
   };
 
+  //Start UI Logic for Third Game
   thirdGameArray.forEach(function(output){
     $(".quizList").append("<li>" + output + "</li>");
-
-  });//end third game count list
-  //start third game quiz question
+  });
   $("#thirdForm").submit(function(){
     event.preventDefault();
     thirdGameInputArray = [];
-
-
     $("input:checkbox[name=counting-way]:checked").each(function(){
       thirdGameInputArray.push($(this).val());
-  });
+    });
     var correctString = correctThirdGameArray.join("");
-    console.log(correctString);
     var inputString = thirdGameInputArray.join("");
-    console.log(inputString);
     if (correctString === inputString) {
       console.log("You are correct!!");
       $(".thirdGameOutput").text("You are Correct! Instead of saying numbers that are both divisible by 3 and 2, I say Cat! Instead of saying numbers divisible by 5 or 7, I say Dog and Turtle, respectively.");
