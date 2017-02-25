@@ -1,5 +1,9 @@
 html, body {
   height: 100%;
+
+}
+p {
+  font-size: 18px;
 }
 .jumbotron {
   background-color: #282F44;
@@ -29,6 +33,7 @@ h3, h2 {
 ol {
   margin-top: 20px;
   margin-bottom: 30px;
+  font-size: 18px;
 }
 ul{
   font-size: 20px;
@@ -57,4 +62,14 @@ padding-left: 15%;
 .thirdGame {
   margin-top: 20px;
   padding: 30px;
+  margin-bottom: 30px;
+}
+.footer {
+  background-color:#E6AF2E;
+  border-top: 2px solid #282F44;
+  text-align: center;
+}
+.footer:hover {
+  background-color: #282F44;
+  color: #E6AF2E;
 }

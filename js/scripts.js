@@ -82,3 +82,9 @@ $(function(){
     };
   });
 });//end jQuery
+
+//footer functionality
+function ScrollToBottom()
+{
+window.scrollTo(0, document.body.scrollHeight);
+}
