@@ -1,55 +1,34 @@
+//------------------------------BUISINESS LOGIC---------------------------------
+  //START FIRST GAME BACK END -----------------------------------------------
 var outputArray = [];
+var pingPongCount = function(number){
+  for (index = 1; index <= number; index++) {
+    if ((index%5===0) && (index%3===0)){
+      outputArray.push("ping-pong");
+    } else if (index%5===0){
+      outputArray.push("pong");
+    } else if (index%3===0){
+      outputArray.push("ping");
+    } else {
+      outputArray.push(index);
+    };
+  };
+};
+  //START SECOND GAME BACK END ----``-------------------------------------------
+var secondGameCount = function(countTo, countBy, word){
+  for (index = 1; index <= countTo; index++) {
+    if (index%countBy===0){
+      outputArray.push(word);
+    } else {
+      outputArray.push(index);
+    };
+  };
+};
+//START SECOND GAME BACK END -----------------------------------------------
 var thirdGameInputArray = [];
 var correctThirdGameArray = ["twosAndThrees", "seven", "five"];
-
-$(function(){
-  //START FIRST GAME ------------------------------------------------------
-  $("#pingForm").submit(function(){
-    event.preventDefault();
-    outputArray = [];
-    $(".outputList").text("");
-    var inputNumber = parseInt($("input#inputNumber").val());
-    for (index = 1; index <= inputNumber; index++) {
-      if ((index%5===0) && (index%3===0)){
-        outputArray.push("ping-pong");
-      } else if (index%5===0){
-        outputArray.push("pong");
-      } else if (index%3===0){
-        outputArray.push("ping");
-      } else {
-        outputArray.push(index);
-      };
-    };
-    outputArray.forEach(function(output){
-      $(".outputList").append("<li>" + output + "</li>");
-    });//output array apprend
-  });//end submit
-//END FIRST GAME
-
-//START SECOND GAME  ------------------------------------------------------
-  $("#differentGameForm").submit(function(){
-    event.preventDefault();
-    outputArray = [];
-    $(".outputList").text("");
-    var countTo = parseInt($("input#newCountTo").val());
-    var countBy = parseInt($("input#newCountBy").val());
-    var word = $("input#newWord").val();
-    for (index = 1; index <= countTo; index++) {
-      if (index%countBy===0){
-        outputArray.push(word);
-      } else {
-        outputArray.push(index);
-      };
-    };
-    outputArray.forEach(function(output){
-      $(".outputList").append("<li>" + output + "</li>");
-    });//output array apprend
-  });//end submit second game
-//END SECOND GAME
-
-//START THIRD GAME  ------------------------------------------------------
-  //Start Business Logic for Third Game
-  var thirdGameArray = []
+var thirdGameArray = []
+var thirdGameCounting = function(){
   for (index = 1; index <= 20; index++) {
     if ((index%2===0) && (index%3===0)){
       thirdGameArray.push("Cat");
@@ -61,8 +40,36 @@ $(function(){
       thirdGameArray.push(index);
     };
   };
+};
+thirdGameCounting();
+//---------------------------------UI LOGIC---------------------------------
+$(function(){
+  //START FIRST GAME FRONT END--------------------------------------------
+  $("#pingForm").submit(function(){
+    event.preventDefault();
+    outputArray = [];
+    $(".outputList").text("");
+    var inputNumber = parseInt($("input#inputNumber").val());
+    pingPongCount(inputNumber);
+    outputArray.forEach(function(output){
+      $(".outputList").append("<li>" + output + "</li>");
+    });//output array apprend
+  });
 
-  //Start UI Logic for Third Game
+//START SECOND GAME  FRONT END--------------------------------------------
+  $("#differentGameForm").submit(function(){
+    event.preventDefault();
+    outputArray = [];
+    $(".outputList").text("");
+    var countTo = parseInt($("input#newCountTo").val());
+    var countBy = parseInt($("input#newCountBy").val());
+    var word = $("input#newWord").val();
+    secondGameCount(countTo, countBy, word);
+    outputArray.forEach(function(output){
+      $(".outputList").append("<li>" + output + "</li>");
+    });//output array apprend
+  });
+//START THIRD GAME FRONT END-------------------------------------------------
   thirdGameArray.forEach(function(output){
     $(".quizList").append("<li>" + output + "</li>");
   });
@@ -75,7 +82,6 @@ $(function(){
     var correctString = correctThirdGameArray.join("");
     var inputString = thirdGameInputArray.join("");
     if (correctString === inputString) {
-      console.log("You are correct!!");
       $(".thirdGameOutput").text("You are Correct! Instead of saying numbers that are both divisible by 3 and 2, I say Cat! Instead of saying numbers divisible by 5 or 7, I say Dog and Turtle, respectively.");
     } else {
       $(".thirdGameOutput").text("That is not quite right. Try Again!");
