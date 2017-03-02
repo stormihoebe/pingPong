@@ -26,7 +26,7 @@
 | Output can replace numbers divisible by second number with a user inputed word| 4, 2, word| [1,word,3,word]|
 
 
-III Ping-Pong Game Three
+### GAME 3 Specifications
 * program recognizes user input
 * program compares user input to the correct answer
 * program displays whether or not input was correct
