@@ -1,64 +1,47 @@
+# _Ping Pong Games_
 
-# Ping Pong Games
+#### Simple Counting Games, 2/22/17
 
-#### 2/22/2017
-
-#### By Stormi Hoebelheinrich_
+### By Stormi Hoebelheinrich
 
 ## Description
 
-specifications:
-I Ping-Pong Game One
-1. program can count by 1 to the number provided.
-  example input: 4
-  example output: [1, 2, 3, 4]
-2. program can count by 3 to the number provided.
-  example input: 9
-  example output: [3, 6, 9]
-3. program can count by 5 to the number provided
-  example input: 20
-  example output: [5, 10, 15, 20]
-4. program can count by 15 to the number provided
-  example input: 30
-  example output: [15, 30]
-5. program can replace numbers divisible by 3, 5, and 15 with "ping", "pong", and "ping-pong" respectively.
-  example input: 6
-  example output [1, 2, ping, 4, pong, ping]
-6. program will print the output onto the page.
+#### This website contains three simple counting games. The first game will take a user inputted number and return a list counting from 1 to the given number with a couple of exceptions. With numbers that are divisible by 5, the computer counts "pong", numbers divisible by 3, are replaced by "ping", and numbers divisible by both 3 and 5 are replaced by "pingpong". In the second game, the user chooses a number to count to, numbers that will be replaced by a certain word, and the word that replaces the numbers. The third game is a simple quiz to see if you can identify the counting pattern.
 
-II Ping-Pong Game Two
-1. program can count by 1 to the number provided.
-  example input: 4
-  example output: [1, 2, 3, 4]
-2. program can count by the second number provided to the first number provided.
-  example input1: 9
-  example input2: 3
-  example output: [3, 6, 9]
-3. program can replace numbers divisible by the second number with  an inputted word or phrase.
-  example input1: 10
-  example input2: 5
-  example input3: cat
-  example output: [1, 2, 3, 4, cat, 5, 6, 7, 8, cat]
+### GAME 1 Specifications
+
+| Behavior |   Input   |   Output   |
+|----------|:---------:|:----------:|
+| Output can count to a number inputted by the user | 2| [1,2] |
+| Output can replace numbers divisible by 3 with "ping"| 3| [1,2,ping]|
+| Output can replace numbers divisible by 5 with "pong"|5| [1,2,ping,4,pong] |
+| Output can replace numbers divisible by 15 with "pingpong"| 15| [1,2,ping,4,pong, ping,7,8,ping,pong,11,ping,13,14,pingpong ] |
+
+
+### GAME 2 Specifications
+
+| Behavior |   Input   |   Output   |
+|----------|:---------:|:----------:|
+| Output can count to a number inputted by the user | 2| [1,2] |
+| Output can replace numbers divisible by second number with a user inputed word| 4, 2, word| [1,word,3,word]|
+
 
 III Ping-Pong Game Three
-1. program recognizes user input
-2. program compares user input to the correct answer
-3. program displays whether or not input was correct
+* program recognizes user input
+* program compares user input to the correct answer
+* program displays whether or not input was correct
+
+###This is the initial release (1.0):
+https://github.com/stormihoebe/pingPong
+
 
 ## Setup/Installation Requirements
 Open the terminal and preform the following:
-```
-cd /desiredLocation
-```
-```
-git clone https://github.com/stormihoebe/pingPong
-```
-```
-cd pingPong
-```
-```
-open index.html in browser
-```
+* clone repository
+* open index.html in web browser
+* enter number for first game
+* enter numbers and word for second game
+* try to solve the pattern in third game
 
 ## Known Bugs
 
@@ -68,12 +51,15 @@ The program has no known bugs. It is not optimized for all screen sizes.
 
 Contact Stormi at Epicodus
 
-## Technologies Used
+#Built with the following tools:
 
-_js_
-_jquery_
+* Atom (https://atom.io/)
+* GitHub (https://github.com/)
+* Git (https://git-scm.com/)
+* Bootstrap (http://getbootstrap.com/)
+* jQuery (https://jquery.com/)
 
-### License
+#License
 
 *This software is licensed under the MIT license.*
 
