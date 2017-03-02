@@ -14,7 +14,7 @@ var pingPongCount = function(number){
     };
   };
 };
-  //START SECOND GAME BACK END ----``-------------------------------------------
+  //START SECOND GAME BACK END ------------------------------------------------
 var secondGameCount = function(countTo, countBy, word){
   for (index = 1; index <= countTo; index++) {
     if (index%countBy===0){
@@ -24,10 +24,12 @@ var secondGameCount = function(countTo, countBy, word){
     };
   };
 };
-//START SECOND GAME BACK END -----------------------------------------------
+//START THIRD GAME BACK END -----------------------------------------------
 var thirdGameInputArray = [];
 var correctThirdGameArray = ["twosAndThrees", "seven", "five"];
 var thirdGameArray = []
+var correctString
+var inputString
 var thirdGameCounting = function(){
   for (index = 1; index <= 20; index++) {
     if ((index%2===0) && (index%3===0)){
@@ -39,6 +41,16 @@ var thirdGameCounting = function(){
     } else {
       thirdGameArray.push(index);
     };
+  };
+};
+var message
+var testArrays = function(){
+  correctString = correctThirdGameArray.join("");
+  inputString = thirdGameInputArray.join("");
+  if (correctString === inputString) {
+    message = "You are Correct! Instead of saying numbers that are both divisible by 3 and 2, I say Cat! Instead of saying numbers divisible by 5 or 7, I say Dog and Turtle, respectively."
+  } else {
+    message = "That is not quite right. Try Again!";
   };
 };
 thirdGameCounting();
@@ -79,18 +91,12 @@ $(function(){
     $("input:checkbox[name=counting-way]:checked").each(function(){
       thirdGameInputArray.push($(this).val());
     });
-    var correctString = correctThirdGameArray.join("");
-    var inputString = thirdGameInputArray.join("");
-    if (correctString === inputString) {
-      $(".thirdGameOutput").text("You are Correct! Instead of saying numbers that are both divisible by 3 and 2, I say Cat! Instead of saying numbers divisible by 5 or 7, I say Dog and Turtle, respectively.");
-    } else {
-      $(".thirdGameOutput").text("That is not quite right. Try Again!");
-    };
+    testArrays();
+    $(".thirdGameOutput").text(message);
   });
 });//end jQuery
 
 //footer functionality
-function ScrollToBottom()
-{
-window.scrollTo(0, document.body.scrollHeight);
-}
+function ScrollToBottom(){
+  window.scrollTo(0, document.body.scrollHeight);
+};
